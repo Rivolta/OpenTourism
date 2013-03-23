@@ -1,4 +1,6 @@
-<?php include "generale.php"; ?>
+<?php 
+session_start();
+include "generale.php"; ?>
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="images/style.css">
@@ -31,7 +33,7 @@
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
+      zoom: 12,
       center: new google.maps.LatLng(41.89001,12.489738),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });

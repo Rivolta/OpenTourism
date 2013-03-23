@@ -15,7 +15,7 @@ include "generale.php"?>
 <?php Header2();?>
 	<div id ="content-wrap">
 		<h1>Open Tourism | Creazione evento </h1>
-		<br><font size="2">Clicca <a href=poi.php>qui</a> per l'elenco dei codici dei Point Of Interests</font>
+		<br><font size="2">Clicca <a href=visualizza.php>qui</a> per visualizzare la mappa oppure <a href=poi.php>qui</a> l'elenco dei codici dei Point Of Interests </font>
 			<form action = "action.php?a=ev" method = "POST"><br>
 			<table border = "2">
 				<tr>

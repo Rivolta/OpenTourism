@@ -61,10 +61,7 @@ if(!is_numeric($ide)){die("Ciai provato");}
 				echo "</tr>";
 				$dEv=explode('-',$Dati->data);
 	
-				if( $dEv[2]-5<date('d')){
-					$dodate= true;
-
-				}
+				
 			}	
 	mysql_close($con);
 	$con=mysql_connect("localhost", "opentourism", "busnimodvo54");
@@ -84,11 +81,26 @@ if(!is_numeric($ide)){die("Ciai provato");}
 					
 					
 					$jsmet = json_decode($meteo, TRUE);
-					var_dump($jsmet["objects"]);
-					var_dump($jsmet["objects"][0]["icon"]);
+					//var_dump($jsmet["objects"]);
+					$a=true;
+					for($m = 0; $m <= 10; $m++){
+						
+						$dEv2=explode('-',($jsmet["objects"][$m]["timestamp"]));
+						$dEv2= explode("T",$dEv2[2]);
+						//echo $dEv[2]."  ".$dEv2[0];
+						if($dEv[2]==$dEv2[0]){ 
+						
+							if($a){
+					
 					echo "<td><b>Meteo</b></td>";
-					echo '<td align="center">'."</td>";
+					echo '<td align="center">'.'<img src="'.($jsmet["objects"][$m]["icon"]).'" \>'."</td>";
 					echo "</tr>";
+					$a=false;
+						
+							}
+						}
+						
+					}
 		
 		
 		
